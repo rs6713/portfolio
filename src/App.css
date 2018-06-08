@@ -261,7 +261,7 @@ h1{
    
   }
 
-    #front-page .main div:first-child{
+    #front-page .main > div:first-child{
       width:25%;
       top:50%;
       transform:translateY(-50%);
@@ -272,11 +272,11 @@ h1{
       box-sizing:border-box;
       display:block;
     }
-      #front-page .main div:first-child img{
+      #front-page .main > div:first-child img{
         width:100%;
         margin-bottom:1em;
       }
-      #front-page .main div:first-child div{
+      #front-page .main > div:first-child div{
         display:inline-block;
         color:white;
         border: 5px solid white;
