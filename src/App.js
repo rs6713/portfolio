@@ -36,11 +36,12 @@ class App extends Component {
             <span>Projects</span>
             <span>Experience</span>
             <span>Contact</span>
-            <div>
-              <span>CV</span>
-              <img src="./images/download.png" />
-
-            </div>
+            <a href="./CV.pdf" download>
+              <div>
+                <span>CV</span>
+                  <img src="./images/download.png" />
+              </div>
+            </a>
           </div>
 
           <div className="main">
