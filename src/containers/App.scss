@@ -1,22 +1,105 @@
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
+
+@mixin side_padding($width){
+  #front-page .header{
+    padding: 1em $width 1em 0em;
+  }
+  #front-page .header a >div:not(#nav-bar){
+    left:$width;
+  }
+  #front-page #alert{
+    padding:0.5em $width;
+  }
+  /*
+  #front-page .main{
+    padding:$width;
+  }*/
+  #front-page .main #profile> div:first-child{
+    left:$width;
+  }
+  #front-page .main #profile>div:last-child{
+    right:$width;
+  }
+  #who-am-i{
+    padding: 10% $width;
+  }
+  #languages #circle .logo{
+    padding-top:$width;
+    left:-$width/2;
+    width:$width; 
+  }
+  #where-going{
+    padding:10% $width;
+  }
+  #quotes{
+    padding:10% $width;
+  }
+  #skills-container{
+    width:100%;
+    padding: 10% $width;
+  }
+  #front-page-footer{
+    padding:0.5em $width;
+  }
+  #front-page .main #profile{
+    
+    padding:0 $width;
+    /*
+    width:(100%-$width*2);
+    left: $width;
+    */
+  }
+
+  #languages #circle{
+    left:($width+ 5%);//15%
+    width:(90% - $width*2); /*10% padding each side, 10, each circle 5 width want to line up */
+    margin-top:10%;
+    padding-top:(90% - $width*2);
+  }
+
 }
+
+@mixin border_width($width){
+  
+  #front-page #alert > div{
+    border-width: 2px*$width;
+  }
+  #front-page .main #profile> div:first-child div{
+    border-width: 5px*$width;
+  }
+
+  #languages #circle{
+    border-width:3px*$width;
+  }
+  #languages #circle .logo{
+    border-width:3px*$width;
+  }
+
+  #where-going div #timeline #bar #timeline-handle{
+    border-width:5px*$width;
+  }
+  #quotes-people div{
+    border-width: 5px*$width;
+  }
+  #skills-container #skills div div:last-child{ 
+    border-width:3px*$width;
+  }
+
+}
+
+
+
 
 @font-face {
   font-family: futura;
-  src: url(./fonts/futura-pt-medium.otf);
+  src: url(../fonts/futura-pt-medium.otf);
 }
 @font-face {
   font-family: futura-light;
-  src: url(./fonts/futura-pt-light.otf);
+  src: url(../fonts/futura-pt-light.otf);
 }
 @font-face {
   font-family: futura-demi;
-  src: url(./fonts/futura-pt-demibold.otf);
+  src: url(../fonts/futura-pt-demibold.otf);
 }
 
 @keyframes i_am{
@@ -119,13 +202,28 @@ img {
   }
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 #App {
   font-size:20px;
 }
 
 body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
   color:#222222;
+  font-family:futura;
 }
+
+
 
 h1{
   font-family:futura-demi;
@@ -141,7 +239,7 @@ h1{
 
   #front-page .header{
     width:100%;
-    background-image: url("./images/Background.jpg");
+    background-image: url("../images/Background.jpg");
     background-size:cover;
     font-family:futura-demi;
     padding: 1em 10% 1em 0em;
@@ -154,11 +252,12 @@ h1{
       cursor:pointer;
       margin-left:2em;
     }
-    #front-page .header >div:not(#nav-bar){
+    #front-page .header a >div:not(#nav-bar){
       display:block;
       position:absolute;
       left:10%;
       top:50%;
+      text-align:left;
       transform:translateY(-50%);
       padding:0.5em 1em;
       box-sizing:border-box;
@@ -169,8 +268,9 @@ h1{
       line-height:1em;
       border-radius:1em;
       transition:0.2s;
+      z-index:10;
     }
-    #front-page .header >div:not(#nav-bar):hover{
+    #front-page .header a >div:not(#nav-bar):hover{
       transform: translateY(-50%) scale(1.1)
     }
     
@@ -223,7 +323,7 @@ h1{
     #front-page #alert >span{
       float:left;
       margin-top: 0.3em;
-      
+      max-width: 85%;
     }
     #front-page #alert > div:hover{
       border-color:#ff34fe;
@@ -254,14 +354,23 @@ h1{
     /*background-color:#fcfcfc;*/
     color:#222222;
     flex: 1 1 0;
-    padding: 10%;
+    padding: 10% 0;
     box-sizing:border-box;
     width:100%;
     position:relative;
    
   }
+    #front-page .main #profile{
+      width:100%;
+      position:absolute;
+      top:50%;
+      box-sizing:border-box;
+      padding:0;
+      margin:0;
+      transform:translateY(-50%);
+    }
 
-    #front-page .main > div:first-child{
+    #front-page .main #profile > div:first-child{
       width:25%;
       top:50%;
       transform:translateY(-50%);
@@ -272,11 +381,11 @@ h1{
       box-sizing:border-box;
       display:block;
     }
-      #front-page .main > div:first-child img{
+      #front-page .main #profile > div:first-child img{
         width:100%;
         margin-bottom:1em;
       }
-      #front-page .main > div:first-child div{
+      #front-page .main #profile > div:first-child div{
         display:inline-block;
         color:white;
         border: 5px solid white;
@@ -291,10 +400,32 @@ h1{
         cursor:pointer;
         transition:0.2s;
       }
-      #front-page .main div:first-child div:hover{
+      #front-page .main #profile > div:first-child div:hover{
         transform: scale(1.1)
       }
-    #front-page .main >div:last-child{
+
+      #front-page .main #profile > div:last-child a div{
+        display:inline-block;
+        color:white;
+        background-color:#ff34fe;
+        /*box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);*/
+        /*box-shadow: 0px 7px 10px rgba(0,0,0,0.4);*/
+        border-radius: 2em;
+        padding: 0.5em 2em 0.4em 2em;
+        height: auto;
+        width: auto;
+        font-family: futura-demi;
+        cursor:pointer;
+        transition:0.2s;
+        display:none;
+        margin-top:3em;
+      }
+      #front-page .main #profile > div:last-child a div:hover{
+        transform: scale(1.1)
+      }
+
+
+    #front-page .main #profile >div:last-child{
       width:50%;
       top:50%;
       transform:translateY(-50%);
@@ -306,21 +437,22 @@ h1{
       padding-left:10%;
       box-sizing:border-box;
     }
-      #front-page .main div:last-child h3{
+      #front-page .main #profile div:last-child h3{
         font-family:futura-demi;
         font-size:1.25em;
         margin:0;
-      }
-      #front-page .main div:last-child div{
-        padding-left:20%;
-        BOX-SIZING:BORDER-BOX;
         
       }
-      #front-page .main div:last-child div p span, #front-page .main div:last-child div h1 span{
+      #front-page .main #profile div:last-child div{
+        /*padding-left:20%;*/
+        box-sizing:border-box;
+        float:right;
+      }
+      #front-page .main #profile >div:last-child div p span, #front-page .main #profile >div:last-child div h1 span{
         width: 100%;
         display: inline-block;
       }
-        #front-page .main div:last-child div h1{
+        #front-page .main #profile >div:last-child div h1{
 
           text-align:justify;
           text-justify: distribute;
@@ -328,11 +460,13 @@ h1{
           margin-bottom: -1.3em;
         }
 
-      #front-page .main div:last-child p{
+      #front-page .main #profile >div:last-child p{
         font-family:futura-light;
         font-size:1em;
         text-align:justify;
         margin:0;
+        width:100%;
+        float:left;
       }
       #front-page .main #arrow-down i{
         color:#c2f0ff;
@@ -345,7 +479,7 @@ h1{
         cursor:pointer;
         top:100%;
         left:50%;
-        transform: translateY(-4em) translateX(-50%);
+        transform: translateY(-4em) translateX(-0.75em);
       }
       #front-page .main #arrow-down i:nth-child(1){  
         animation: blink3 linear infinite 1.5s 0s;
@@ -361,7 +495,7 @@ h1{
         top:0.8em;
       }
       
-
+      
  #front-page > img{
   position:absolute;
   top:100%;
@@ -440,7 +574,7 @@ h1{
       left:50%;
       transform:translateX(-50%) translateY(10%);
       transition:0.5s;
-      width:25%;
+      width:40%;
       height:30%;
       opacity:0;
       overflow-y:scroll;
@@ -505,22 +639,21 @@ h1{
     box-sizing:border-box;
   }
     #where-going #time-container{
-      height:12em;
+      display:flex;
       width:100%;
       
       /*box-shadow: 0px 7px 10px rgba(0,0,0,0.4);*/
     }
       #where-going div #timeline{
         width:60%;
-        height:100%;
         box-sizing:border-box;
-        padding:0 5%;
+        padding:6em 5%;
+        flex:1 1 ;
         background-color:white;
-        display:inline-block;
       }
         #where-going div #timeline #bar{
           width:100%;
-          height:10px;
+          height:8px;
           background-color:#222222;
           position:relative;
           top:50%;
@@ -570,9 +703,8 @@ h1{
           }
       #where-going div #time-description{
         width:40%;
-        height:100%;
+        
         background-color:#306cff;
-        float:right;
         color:white;
         
         padding:1em;
@@ -704,6 +836,12 @@ h1{
           #skills-container #skills div:hover div:first-of-type{
             opacity:1;
           }
+            #skills-container #skills div div:first-of-type h5{
+              margin-bottom:0;
+            }
+            #skills-container #skills div div:first-of-type h6{
+              margin-top:0.5em;
+            }
             #skills-container #skills div div:first-of-type h5,
             #skills-container #skills div div:first-of-type h6,
             #skills-container #skills div div:first-of-type p{
@@ -840,3 +978,220 @@ h1{
   to { transform: rotate(360deg); }
 }
 */
+
+/*
+Always design mobile first. Mobile First means designing for mobile before designing for desktop or 
+any other device (This will make the page display faster on smaller devices).
+add as many breakpoints as you like.
+
+
+*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+this is what your website currently works on
+*/
+@media only screen and (min-width: 1200px) {
+  #front-page .main #profile > div:first-child{
+    width:20%;
+  }
+  @include side_padding(15%);
+  #skills-container #skills {
+    grid-template-columns: repeat(4, 10vw);
+    grid-auto-rows: 10vw;
+    grid-column-gap:20vw;
+    grid-column-gap:10vw;
+  }
+
+  #languages {
+    padding-top: 40%;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1200px) {
+  
+    #App {
+      font-size:18px;
+    }
+    #front-page .main div:last-child div{
+      /*padding-left:10%;*/
+    }
+    h1{
+      font-size:2.5em;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 992px) {
+  #front-page .main #profile > div:last-child {
+    width: 50%;
+  }
+  #front-page > img {
+    width: 30%;
+  }
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  #App {
+    font-size:16px;
+  }
+  h1{
+    font-size:2.5em;
+  }
+  #quotes i {
+    font-size:2.5em;
+  }
+  #front-page .main div:last-child div{
+    padding-left:0%;
+  }
+  @include side_padding(5%);
+  #front-page > img {
+    left: 97%;
+  }
+  #front-page .main #profile> div:last-child {
+    width: 60%;
+  }
+  @include border_width(0.67);
+
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #front-page > img {
+    width: 35%;
+  }
+
+  #skills-container #skills {
+    grid-gap: 15vw;
+    grid-template-columns: repeat(3, 20vw);
+    grid-auto-rows: 20vw; 
+  }
+
+  #front-page .main #profile> div:first-child {
+    display:block;
+    width:30%;
+    position:relative;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    margin-bottom:1em;
+  }
+    #front-page .main #profile > div:first-child div {
+      display:none;
+    }
+
+  #front-page .main  #profile> div:last-child {
+    display:block;
+    position:relative;
+    padding:0;
+    width:80%;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+  }
+    #front-page .main #profile div:last-child div {
+      float:none;
+      display:inline-block;
+      width:100%;
+      padding-left:0;
+    }
+      #front-page .main #profile div:last-child p {
+        float:none;
+      }
+
+      #front-page .main #profile> div:last-child div h1{
+        margin-bottom: -0.9em;
+        line-height: 1;
+        text-align: center;
+      }
+      #front-page .main #profile> div:last-child h3{
+        display:inline-block;
+        display: none;
+      }
+      #front-page .main #profile> div:last-child a div{
+        display:inline-block;
+      }
+
+      #where-going #time-container{
+        display:block;
+        
+      }
+        #where-going #time-container #timeline{
+          width:100%;
+          padding-top: 6em ;
+          padding-bottom: 6em ;
+          flex:none;
+        }
+        #where-going #time-container #time-description{
+          width:100%;
+          flex:none;
+        }
+        #languages #lang-descrip{
+          top:60%;
+        }
+} 
+@media only screen and (max-width: 500px) {
+  #skills-container #skills {
+    grid-template-columns: repeat(2, 30vw);
+    grid-auto-rows: 30vw; 
+  }
+  #skills-container #skills >div:hover{
+    transform:scale(1.2)
+  }
+  h1{
+    font-size:2em;
+  }
+  #quotes i {
+    font-size:2em;
+  }
+  #i-am > div{
+    height:2.8em;
+  }
+  #front-page > img {
+    display:none;
+  }
+  #cat-platform{
+    display:none;
+  }
+  #front-page #alert >span{
+    max-width: 80%;
+  }
+  #front-page .header a >div:not(#nav-bar):hover{
+    transform: translateY(50%) scale(1.1)
+  }
+  #front-page .header a > div:not(#nav-bar) {
+    top: 100%;
+
+    transform: translateY(50%);
+  }
+
+  #languages #circle{
+    position:absolute;
+    top:0;
+    left:-10%;
+    width:120%; /*10% padding each side, 10, each circle 5 width want to line up */
+    margin-top:15%;
+    padding-top:120%;
+    border:3px dashed #dddddd;
+    border-radius:100%;
+  }
+  #languages {
+    padding-top: 70%;
+  }
+  #languages #lang-descrip{
+    top:70%;
+  }
+
+  
+}
+
+
+
+
+
+
+

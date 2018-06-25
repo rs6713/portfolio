@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './containers/App';
 import Chart from 'chart.js' 
 import registerServiceWorker from './registerServiceWorker';
 import $ from "jquery";
@@ -64,11 +63,57 @@ var myPieChart = new Chart(ctx,{
     }
 });
 
+var targets=[
+    {
+        time:new Date(2018, 8, 1),
+        title: "New Job",
+        aims:["Learning Driven Environment","Full Stack Developer", "Research Emerging Technologies", "AI/Machine Learning Opportunities"]
+    },
+    {
+        time:new Date(2019, 0, 1),
+        title: "End Year Targets",
+        aims:["Learn REACT to a usable level", "Participate in a Kaggle Competition", "Improve DataScience Skills: Pandas, Tensorflow, ScikitLearn"]
+    },
+    {
+        time:new Date(2019, 8, 1),
+        title: "New Horizons",
+        aims:["PHD with a Machine Learning Focus", "Advanced AI Residence Program", "Continued Job" ]
+    }
+];
+
 var decelerate=false;
+var currentPage=0;
+$(window).resize(function(){
+    var temp=$("#nav-bar").css("transition")
+    $("#nav-bar").css("transition", "all 0s ease 0s");
+    
+    $("#nav-bar").css("width", $(".header span:eq("+ currentPage +")").width()+16)
+    $("#nav-bar").css("left", $(".header span:eq("+ currentPage +")").offset().left-8);
+    $("#nav-bar")[0].offsetHeight; 
+    $("#nav-bar").css("transition", temp);
+
+    $("#bar").find(" > div:not(#timeline-handle)").each(function(i){
+        var x=$("#bar").width()*0.075+$("#bar").width()*0.85*i/(targets.length-1)
+        let flag=false;
+        if( Math.abs($(this).position().left-$("#timeline-handle").position().left)<= $("#bar").width()*0.85/((targets.length-1)*2)  ){
+            flag=true;
+        }
+        $(this).css("left", x )
+        if(flag){
+            $("#timeline-handle").css("left",$(this).position().left)
+        }
+    })
+    
+});
+
 $(document).ready(function(){
-
-
-
+    $("#nav-bar").css("width", $(".header span:eq("+currentPage+")").width()+16)
+    $("#nav-bar").css("left", $(".header span:eq("+currentPage+")").offset().left-8)
+    $(".header span").click(function(){
+        $("#nav-bar").css("left", $(this).offset().left-8)
+        $("#nav-bar").css("width", $(this).width()+16)
+        currentPage=$(this).index()-1;
+    })
 
     $("#languages #circle .logo").mouseover(function(){
         decelerate=true;
@@ -104,6 +149,8 @@ $(document).ready(function(){
     $("#timeline-handle").mousedown(function(){
         timelineActive=true;
     })
+    $("#timeline-handle").css("left", $("#bar > div:first-child").position().left);
+    
     $(document).mouseup(function(){
         
         if(timelineActive){
@@ -222,7 +269,7 @@ $(document).ready(function(){
         if ( $("#quotes-people div").index(this) != activeQuote){
             $(this).css({
                 "transform": "translateY(-50%) translateX(-50%) scale(1)",
-                "border-width": "5px"
+                //"border-width": "5px"
                 //"border-color": "white"
             })
         }
@@ -271,12 +318,7 @@ $(document).ready(function(){
         container.appendChild(border)
         $("#skills").append(container)
     }
-    $("#nav-bar").css("width", $(".header span:first-of-type").width()+16)
-    $("#nav-bar").css("left", $(".header span:first-of-type").offset().left-8)
-    $(".header span").click(function(){
-        $("#nav-bar").css("left", $(this).offset().left-8)
-        $("#nav-bar").css("width", $(this).width()+16)
-    })
+
 
     var scrollMarkers=["#alert","#white-platform", "#languages", "#where-going", "#quotes", "#skills-container", "#i-am" ]
     $(document).keydown(function(event){
@@ -316,7 +358,7 @@ var skills=[
     },
     {
         image:"arduino.png",
-        skill:"Arduino Micro-Controllers",
+        skill:"Arduino",
         level:"Advanced",
         descrip:"",
         projects:[],
@@ -330,7 +372,7 @@ var skills=[
     },
     {
         image:"website.png",
-        skill:"FullStack Web Development",
+        skill:"FullStack Web",
         level:"Advanced",
         descrip:"",
         projects:[],
@@ -360,7 +402,7 @@ var skills=[
     },
     {
         image:"maker.png",
-        skill:"Tinkering / Hacking",
+        skill:"Hacking",
         level:"Hacks, Workshops and Conferences",
         descrip:"",
         projects:[],
@@ -383,7 +425,7 @@ var skills=[
     },
     {
         image:"arcade.png",
-        skill:"Retro Arcade Systems",
+        skill:"Retro Arcades",
         level:"Pac-Man, DDR",
         descrip:"",
         projects:[],
@@ -455,39 +497,24 @@ var languages=[
     }
 ];
 
-var targets=[
-    {
-        time:new Date(2018, 8, 1),
-        title: "New Job",
-        aims:["Learning Driven Environment","Full Stack Developer", "Research Emerging Technologies", "AI/Machine Learning Opportunities"]
-    },
-    {
-        time:new Date(2019, 0, 1),
-        title: "End Year Targets",
-        aims:["Learn REACT to a usable level", "Participate in a Kaggle Competition", "Improve DataScience Skills: Pandas, Tensorflow, ScikitLearn"]
-    },
-    {
-        time:new Date(2019, 8, 1),
-        title: "New Horizons",
-        aims:["PHD with a Machine Learning Focus", "Advanced AI Residence Program", "Continued Job" ]
-    }
-];
+
 
 
 var quotes=[
+    /*
     {
         name:"Joe, MEng",
         relation:"Good Friend",
         quote:"",
         date:"05/06/2018",
         image:"./images/joe.png"
-    },
+    },*/
     {
         name:"AKQA",
         relation:"Past Internship Employer",
-        quote:"Becks is an exceptionally hard worker, just gr88888, gr999 if you will.",
+        quote:"Inspired to see such enthusiasm and dedication to creating the future.",
         image:"./images/akqa.png",
-        date:"30/09/2016"
+        date:"22/09/2016"
     },
     {
         name:"Zoe Fay, MSc",

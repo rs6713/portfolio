@@ -5,15 +5,11 @@ data reactive?
 incorporate jade, angular?
 multiple page links?
 scss, sass?
-
-
 */
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-
-
 
 
 class App extends Component {
@@ -45,29 +41,34 @@ class App extends Component {
           </div>
 
           <div className="main">
-            <div>
-              <img src="./images/becks.png" />
-              <a href="mailto:becks.simpson@outlook.com">
-                <div>Contact</div>
-              </a>
-            </div>
             <div id="arrow-down">
-              <i className="fas fa-angle-down"></i>
-              <i className="fas fa-angle-down"></i>
-              <i className="fas fa-angle-down"></i>
-            </div>
-            <div>
-              <h3>Hello I am</h3>
-              <div>
-                <h1>Becks Simpson<span></span></h1>
-                <p>Futurist • Full-Stack Developer • AI Enthusiast<span> </span></p>
+                <i className="fas fa-angle-down"></i>
+                <i className="fas fa-angle-down"></i>
+                <i className="fas fa-angle-down"></i>
               </div>
-              <p>
-                I'm a recent Computer Science Graduate with a year of industry experience in a tech innovations role. 
-                Currently I’m looking for my next challenge, ideally it'd involve a mix of AI and full-stack web development responsibilities. 
-              </p>
+            <div id="profile">
+              <div>
+                <img src="./images/becks.png" />
+                <a href="mailto:becks.simpson@outlook.com">
+                  <div>Contact</div>
+                </a>
+              </div>
+              
+              <div>
+                <h3>Hello I am</h3>
+                <div>
+                  <h1>Becks Simpson<span></span></h1>
+                  <p>Futurist • Full-Stack Developer • AI Enthusiast<span> </span></p>
+                </div>
+                <p>
+                  I'm a recent Computer Science Graduate with a year of industry experience in a tech innovations role. 
+                  Currently I’m looking for my next challenge, ideally it'd involve a mix of AI and full-stack web development responsibilities. 
+                </p>
+                <a href="mailto:becks.simpson@outlook.com">
+                  <div>Contact</div>
+                </a>
+              </div>
             </div>
-            
           </div>
           <img src="./images/cat.png" />
         </div>
