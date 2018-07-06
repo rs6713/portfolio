@@ -1,0 +1,421 @@
+@font-face {
+  font-family: futura;
+  src: url(../fonts/futura-pt-medium.otf); }
+@font-face {
+  font-family: futura-light;
+  src: url(../fonts/futura-pt-light.otf); }
+@font-face {
+  font-family: futura-demi;
+  src: url(../fonts/futura-pt-demibold.otf); }
+#main {
+  width: 100%;
+  padding: 0% 0%;
+  box-sizing: border-box;
+  font-size: 16px;
+  flex: 1 1;
+  display: flex;
+  /*padding-top:2em;*/
+  flex-direction: column;
+  padding-bottom: 0; }
+
+#toolbar {
+  width: 100%;
+  color: white;
+  font-family: futura-demi;
+  background-color: #222222;
+  /*border-radius: 1em 1em 0 0;*/
+  padding: 1em 9.5%;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  /*margin-bottom:1.333vw;*/
+  text-align: justify;
+  text-justify: inter-word; }
+
+#toolbar div:first-child {
+  padding-left: 0.5%; }
+
+#toolbar div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+  justify-content: space-between; }
+
+#toolbar div span {
+  padding: 0 0.5% 0 0.5%;
+  display: inline-block;
+  font-family: futura-light; }
+
+#toolbar input {
+  cursor: pointer;
+  margin-left: 0; }
+
+#projects-container {
+  width: 100%;
+  flex: 0 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3333vw);
+  grid-auto-rows: 20vw;
+  grid-gap: 0;
+  box-sizing: border-box;
+  overflow-y: scroll; }
+
+#projects-container > div {
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; }
+
+#projects-container > div:nth-child(3n+1) {
+  text-align: left; }
+
+#projects-container > div:nth-child(3n) {
+  text-align: right; }
+
+#projects-container > div:nth-child(3n+1) #content {
+  padding-left: 30%;
+  padding-right: 0; }
+
+#projects-container > div:nth-child(3n) #content {
+  padding-right: 30%;
+  padding-left: 0; }
+
+#projects-container div #overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  overflow: hidden; }
+
+#projects-container div #overlay img {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+
+#projects-container > div:nth-child(4n+1) #overlay,
+#projects-container > div:nth-child(4n+1) {
+  background-color: whitesmoke;
+  color: #222222; }
+
+#projects-container > div:nth-child(4n+2) #overlay,
+#projects-container > div:nth-child(4n+2) {
+  background-color: #c2f0ff; }
+
+#projects-container > div:nth-child(4n+3) #overlay,
+#projects-container > div:nth-child(4n+3) {
+  background-color: #306cff;
+  color: white; }
+
+#projects-container > div:nth-child(4n) #overlay,
+#projects-container > div:nth-child(4n) {
+  background-color: #f9e6ff;
+  color: #222222; }
+
+#projects-container div #content {
+  width: 100%;
+  position: absolute;
+  font-family: futura-demi;
+  font-size: 16px;
+  top: 50%;
+  left: 0;
+  padding: 0 1em;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: 0.3s; }
+
+#projects-container div:hover #overlay {
+  opacity: 1;
+  z-index: 5;
+  transform: scale(1.1); }
+
+#projects-container div:hover #content h5 {
+  margin-top: 2em;
+  transition: 1s; }
+
+#projects-container div #content h5 {
+  font-family: futura-light;
+  margin: 1em 0;
+  font-size: 1em; }
+
+#fill-page {
+  flex: 1;
+  overflow-y: scroll; }
+
+#fill-page > div:first-child {
+  width: 100%;
+  height: 100%; }
+
+#info {
+  width: 60%;
+  float: left;
+  box-sizing: border-box;
+  padding: 5% 8% 2% 10%;
+  clear: both;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+
+#info #spread {
+  flex: 1; }
+
+#info #top {
+  position: relative;
+  text-align: justify; }
+
+#info #footer i {
+  font-size: 2.5em;
+  cursor: pointer;
+  margin-top: 0.4em; }
+
+#info h3 {
+  margin-top: 0;
+  font-size: 2.5em;
+  font-family: futura-demi;
+  margin-bottom: 0.5em;
+  text-align: left; }
+
+#info p {
+  font-family: futura-demi;
+  font-size: 1em; }
+
+#info #date {
+  font-family: futura-light;
+  font-size: 1em;
+  position: absolute;
+  right: 0;
+  transform: translateY(-100%);
+  top: 0em; }
+
+#info #features {
+  font-family: futura-light;
+  font-size: 1em; }
+
+#info #tools {
+  text-align: justify;
+  width: 100%;
+  font-size: 0.8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 1em; }
+
+#info #tools span {
+  padding: 0.5em 1em;
+  background-color: #c2f0ff;
+  border-radius: 1em;
+  flex: 0 0 auto;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em; }
+
+#info #categories {
+  text-align: justify;
+  width: 100%;
+  font-size: 0.8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+#info #categories span {
+  padding: 0.5em 1em;
+  color: white;
+  background-color: #ff34fe;
+  border-radius: 1em;
+  flex: 0 0 auto;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em; }
+
+#info a {
+  text-decoration: none;
+  margin-bottom: 1em;
+  display: block; }
+
+#info a span {
+  padding: 0.5em 1em;
+  color: white;
+  background-color: #222222;
+  border-radius: 1em;
+  font-size: 0.8em; }
+
+#pictures {
+  float: right;
+  width: 40%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2% 10% 2% 0; }
+
+#pictures div {
+  width: 100%;
+  overflow-y: scroll;
+  max-height: 100%; }
+
+#pictures img {
+  width: 100%;
+  margin-bottom: 1em; }
+
+#findings {
+  clear: both;
+  text-align: center;
+  width: 100%;
+  padding: 5% 10%;
+  box-sizing: border-box;
+  background-color: #c2f0ff; }
+
+#findings h1 {
+  font-size: 2.5em;
+  margin-bottom: 1em; }
+
+#findings > div {
+  font-family: futura-light;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+#findings > div div {
+  flex: 0 1 26%;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1200px) {
+  #toolbar {
+    padding-left: 14.5%;
+    padding-right: 14.5%; }
+
+  #projects-container > div:nth-child(3n+1) #content {
+    padding-left: 45%;
+    padding-right: 0; }
+
+  #projects-container > div:nth-child(3n) #content {
+    padding-right: 45%;
+    padding-left: 0; }
+
+  #info {
+    padding-left: 15%; }
+
+  #pictures {
+    padding-right: 15%; }
+
+  #findings {
+    padding: 5% 15%; } }
+/* Medium devices (landscape tablets, 768px and up) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  #toolbar {
+    padding: 1em 4.5%; }
+
+  #info {
+    width: 60%;
+    float: left;
+    box-sizing: border-box;
+    padding: 5% 8% 5% 5%;
+    height: 100%; }
+
+  #pictures {
+    padding-right: 5%;
+    overflow-y: scroll; }
+
+  #projects-container {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 30vw; }
+
+  /*
+      #projects-container>div:nth-child(even){
+          text-align:right;
+      }
+      #projects-container>div:nth-child(odd){
+          text-align:left;
+      }
+      #projects-container>div:nth-child(even) #content{
+             padding-right:10%;
+      }
+      #projects-container>div:nth-child(odd) #content{
+              padding-left:10%;
+      }
+      */
+  #projects-container > div:nth-child(3n+1) {
+    text-align: center; }
+
+  #projects-container > div:nth-child(3n) {
+    text-align: center; }
+
+  #projects-container > div:nth-child(3n+1) #content {
+    padding: 0; }
+
+  #projects-container > div:nth-child(3n) #content {
+    padding: 0; }
+
+  #findings > div div {
+    flex: 0 1 45%; } }
+#projects-container div #overlay {
+  opacity: 0.05; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #info {
+    width: 100%;
+    float: none;
+    height: auto;
+    position: relative;
+    padding: 5% 5%; }
+
+  #pictures {
+    float: none;
+    width: 100%;
+    padding: 5% 5%;
+    overflow: initial;
+    max-height: initial; }
+
+  #pictures > div {
+    overflow-y: initial;
+    max-height: initial; }
+
+  #fill-page > div:first-child {
+    height: auto; }
+
+  #findings > div div {
+    flex: 0 1 80%; } }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+  #toolbar {
+    margin-top: 4em; }
+
+  #projects-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 60vw; }
+
+  #projects-container > div:nth-child(3n+1) {
+    text-align: center; }
+
+  #projects-container > div:nth-child(3n) {
+    text-align: center; }
+
+  #projects-container > div:nth-child(3n+1) #content {
+    padding: 0; }
+
+  #projects-container > div:nth-child(3n) #content {
+    padding: 0; }
+
+  #toolbar div:last-child {
+    justify-content: space-between; }
+
+  #info {
+    padding-top: 15%; } }
+
+/*# sourceMappingURL=Projects.css.map */
