@@ -58,6 +58,15 @@ var languages=[
       projects:[]
   }
 ];
+
+
+for(let p=0; p<languages.length; p++){
+      var img=new Image();
+      img.src="../images/languages/"+languages[p].icon
+      languages[p].icon=img;
+}
+
+
 const descripShow={"transform": "translateX(-50%) translateY(0%)","opacity":1 };
 const descripHide= {"transform": "translateX(-50%) translateY(10%)","opacity":0 };
 const rotatePeriod=20;//20
@@ -194,7 +203,7 @@ class Languages extends Component {
           <div></div>
         </div>
         <div id="circle"> 
-          {languages.map((lang, index)=><div key={index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img alt={"Language:"+ lang.lang} src={"../images/languages/"+lang.icon} /></div>)}
+          {languages.map((lang, index)=><div key={index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img alt={"Language:"+ lang.lang} src={lang.icon.src} /></div>)}
         </div>
       </div>
     );  

@@ -89,7 +89,7 @@ const projectList=[
       {type:IMAGE, title:"Prototype Design #4", file: "calendar/7.png"},
       {type:IMAGE, title:"Prototype Design #5", file: "calendar/8.png"},
     ],
-    links:["nbcalendar.herokuapp.com"],
+    links:["graphicalendar.herokuapp.com"],
     categories:[WEBAPP, DESIGN, FRONT],
     takeaways:[],
     tools:["Angular", "HTML5", "CSS3", "Node.js", "Express", "Microsoft Exchange API", "Adobe Illustrator"],
