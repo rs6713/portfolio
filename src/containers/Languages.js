@@ -203,7 +203,7 @@ class Languages extends Component {
           <div></div>
         </div>
         <div id="circle"> 
-          {languages.map((lang, index)=><div key={"lang"+index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img alt={"Language:"+ lang.lang} src={lang.icon.src} /></div>)}
+          {languages.map((lang, index)=><div key={"lang"+index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img key={index+"img" } src={lang.icon.src} /></div>)}
         </div>
       </div>
     );  
