@@ -354,8 +354,8 @@ class About extends Component{
         </div>
         <div id="front-page-footer">
             { 
-                links.map((link)=>
-                    <a href={link.link} target="blank">
+                links.map((link, index)=>
+                    <a key={index+"link"} href={link.link} target="blank">
                         <img src={link.img} />
                     </a>
                 )

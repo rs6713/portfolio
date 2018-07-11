@@ -82,8 +82,8 @@ class Languages extends Component {
       angleRotate:0,
       angleIncrement:angleIncrement,
       langShow:false,
-      circleWidth:0,
-      style:[languages.map((x)=>{})]
+      circleWidth:1,
+      style:languages.map((x)=>{return {}})
     }
     this.getPosition=this.getPosition.bind(this)
     this.showLang=this.showLang.bind(this)
@@ -203,7 +203,7 @@ class Languages extends Component {
           <div></div>
         </div>
         <div id="circle"> 
-          {languages.map((lang, index)=><div key={index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img alt={"Language:"+ lang.lang} src={lang.icon.src} /></div>)}
+          {languages.map((lang, index)=><div key={"lang"+index} value={index} onMouseLeave={this.hideLang} onMouseEnter={this.showLang(lang)}  className="logo" style={this.state.style[index]}><img alt={"Language:"+ lang.lang} src={lang.icon.src} /></div>)}
         </div>
       </div>
     );  
