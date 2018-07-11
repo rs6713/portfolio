@@ -17,6 +17,7 @@ import Menu from '../components/Menu';
 import './App.css'
 //import logo from './logo.svg';
 
+
 const hideAlert={"maxHeight": "0em", "padding": "0 10%"};
 class App extends Component {
   constructor(props){
@@ -89,4 +90,67 @@ export default App;
         return (<About changePage={this.changePage} currentPage={this.state.page}/>);
     }
 */
+
+
+var languages=[
+  {
+      icon:'html.png',
+      lang:"HTML",
+      years:"6 Years - 2012/18",
+      projects:["Multiple MEAN Stack Websites"]
+  },
+  {
+      icon:'css.png',
+      lang:"CSS",
+      years:"6 Years - 2012/18",
+      projects:["Multiple MEAN Stack Websites"]
+  },
+  {
+      icon:'js.png',
+      lang:"JavaScript",
+      years:"3 Years - 2015/18",
+      projects:["Multiple MEAN Stack Websites"]
+  },
+  {
+      icon:'angular.png',
+      lang:"Angular",
+      years:"1 Year - 2017/18",
+      projects:[]
+  },
+  {
+      icon:'node.png',
+      lang:"Node",
+      years:"2 Years - 2016/18",
+      projects:[]
+  },
+  {
+      icon:'fsharp.png',
+      lang:"F Sharp",
+      years:"1 Year - 2016/17",
+      projects:[]
+  },
+  {
+      icon:'c++.png',
+      lang:"C++",
+      years:"2 Years - 2014/16",
+      projects:["High performance Computing Concurrency", "Compiler", "Suduko Solver"]
+  },
+  {
+      icon:'python.png',
+      lang:"Python",
+      years:"3 Years - 2015/18",
+      projects:[]
+  },
+  {
+      icon:'tensorflow.png',
+      lang:"TensorFlow",
+      years:"1 Year - 2017/18",
+      projects:[]
+  }
+];
+for(let p=0; p<languages.length; p++){
+  var img=new Image();
+  img.src="../images/"+languages[p].icon
+  languages[p].icon=img;
+}
 
