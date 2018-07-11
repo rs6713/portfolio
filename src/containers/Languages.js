@@ -62,7 +62,7 @@ var languages=[
 
 for(let p=0; p<languages.length; p++){
       var img=new Image();
-      img.src="../images/"+languages[p].icon
+      img.src="./images/"+languages[p].icon
       languages[p].icon=img;
 }
 
