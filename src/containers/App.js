@@ -50,7 +50,7 @@ class App extends Component {
     return(
       <div id="everything">
         <div id="alert" style={this.state.hideAlert?hideAlert :{}}>
-          <img src="./images/watch.png" />
+          <img src="./images/icons/watch.png" />
           <span>
             For a limited time only accepting Job offers. <span onClick={function(){this.setState({page:"contact"})}.bind(this)}> Get your Becks today.</span>
           </span>

@@ -15,19 +15,19 @@ const Contact = (props)=> {
             </h1>
             <div id="breaker"></div>
             <p>
-              I'm passionate about design, web apps, futurism and AI, and seeking employment from September 2018. Feel free to take a look at my CV and drop me a line concerning potential job opportunities.
+              I'm passionate about futurism, AI, web apps and seeking employment from April 2019. Feel free to take a look at my CV and drop me a line concerning potential job opportunities.
             </p>
             <div>
               <a href="https://github.com/rs6713" target="blank">
-                <img src="./images/githubblack.png"/>
+                <img src="./images/icons/githubblack.png"/>
               </a>
               <a href="https://www.linkedin.com/in/becks-simpson-037096107/" target="blank">
-                <img src="./images/linkedinblack.png"/>
+                <img src="./images/icons/linkedinblack.png"/>
               </a>
             </div>
           </div>
           <div>
-            <img src="./images/happy.jpg"/>
+            <img src="./images/becks1.jpeg"/>
           </div>
         </div>
       </div>

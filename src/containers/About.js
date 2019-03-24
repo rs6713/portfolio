@@ -40,7 +40,7 @@ var quotes=[
       name:"AKQA",
       relation:"Past Internship Employer",
       quote:"Inspired to see such enthusiasm and dedication to creating the future.",
-      image:"./images/akqa.png",
+      image:"./images/entities/akqa.png",
       date:"22/09/2016"
   },
   {
@@ -48,22 +48,22 @@ var quotes=[
       relation:"Fellow AQKA Future Academy Resident",
       quote:"Becks was a great asset to our team from ideation through to project delivery.",
       date:"20/09/2016",
-      image:"./images/zoe.jpeg"
+      image:"./images/entities/zoe.jpeg"
   }
 ];
 
 const links=[
     {
         link:"https://github.com/rs6713",
-        img:"./images/github.png",
+        img:"./images/icons/github.png",
     },
     {
         link: "https://www.linkedin.com/in/becks-simpson-037096107/",
-        img:"./images/linkedin.png",
+        img:"./images/icons/linkedin.png",
     },
     {
         link: "mailto:becks.simpson@outlook.com",
-        img:"./images/email.png",
+        img:"./images/icons/email.png",
     }
 ]
 
@@ -271,8 +271,8 @@ class About extends Component{
                   <p>Futurist • Full-Stack Developer • AI Enthusiast<span> </span></p>
                 </div>
                 <p>
-                  I'm a recent Computer Science Graduate with a year of industry experience in a tech innovations role. 
-                  Currently I’m looking for my next challenge, ideally it'd involve a mix of AI and full-stack web development responsibilities. 
+                  I'm a recent Computer Science Graduate with 1-2 years of industry experience in technology research and FullStack development. 
+                  My next role would ideally involve some combination of machine learning, data processing and full-stack web development. 
                 </p>
                 <a href="mailto:becks.simpson@outlook.com">
                   <div>Contact</div>
@@ -308,7 +308,7 @@ class About extends Component{
                   )
                 }
                 <div id="timeline-handle" onMouseDown={this.timelineActive} style={{left: this.state.handlePos}}>
-                  <img src="./images/drag.png" />
+                  <img src="./images/icons/drag.png" />
                 </div>
               </div>
             </div>
@@ -360,7 +360,7 @@ class About extends Component{
                     </a>
                 )
             }
-          <span>© Becks Simpson 2018</span>
+          <span>© Becks Simpson 2019</span>
         </div>
       </div>
     );
@@ -687,7 +687,7 @@ const chartOptions={
   data: {
     datasets: [{
         data: [
-            30,50,20
+            15,65,20
         ],
         backgroundColor: [
             "#fdabff", "#cc8cff","#67d0ff"

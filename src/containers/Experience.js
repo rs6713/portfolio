@@ -54,6 +54,23 @@ var experiences=[
   ],
   skills:["Organisation and Planning"]
 },
+
+{
+  role:"Junior Software Developer",
+  startdate:new Date(2018,8),
+  enddate:new Date(2019,2),
+  media:[],
+  company:"SohoStrategy",
+  responsibilities:[
+    "Developed a Dataset CMS with a React Frontend, Nodejs Backend & PostgreSQL Database. ",
+    "Setup systems on AWS, with automated CodeDeploy via CircleCI",
+    "Created several data scrapers using ScraPy."
+  ],
+  skills:[
+    "NodeJS","CircleCI","AWS RDS,EC2,CodeDeploy","ScrapingHub","SASS", "HTML5", "CSS3", "Javascript ES6", "React", "Python3", "ScraPy","PostGresQL"
+  ]
+},
+
 {
   role:"Prototype Developer / Innovations Analyst",
   startdate:new Date(2017,7),
@@ -93,7 +110,8 @@ var experiences=[
     "Took courses focusing on: Machine Learning, Pattern Recognition, Robotics, Algorithms, High Performance Computing and Graphics",
   ],
   skills:["C++", "Soldering", "Verilog","Machine Learning", "AI", "SQL","High Performance Computing", "Advanced Robotics", "F#", "User Interface Design", "Algorithms"]
-},
+}
+/*,
 {
   role:"Secondary School Student",
   startdate:new Date(2006, 9),
@@ -101,7 +119,7 @@ var experiences=[
   company:"Dame Alice Owens",
   responsibilities:[],
   skills:["A* Mathematics", "A* Further Mathematics","A* Biology","A* Chemistry","A* Physics",]
-},
+},*/
 ]
 /*
 {
@@ -127,6 +145,8 @@ const duration=end-start
 const gridStyle={
   //gridTemplateColumns: "repeat("+experiences.length+", 1fr)",
   //gridTemplateRows: "repeat("+duration+", "+1+"fr)"//+(100/duration)vh
+  gridTemplateColumns: "repeat("+duration+", 1fr)",
+  gridTemplateRows: "repeat("+experiences.length+", "+1+"fr)"//+(100/duration)vh
 }
 console.log("start",start, "end", end)
 console.log("duration", duration)

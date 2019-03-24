@@ -63,7 +63,7 @@ class Menu extends React.Component {
           <a href="./CV.pdf" download>
             <div>
               <span>CV</span>
-                <img src="./images/download.png" />
+                <img src="./images/icons/download.png" />
             </div>
           </a>
         </div>
