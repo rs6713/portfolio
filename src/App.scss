@@ -91,15 +91,15 @@
 
 @font-face {
   font-family: futura;
-  src: url(../fonts/futura-pt-medium.otf);
+  src: url(./fonts/futura-pt-medium.otf);
 }
 @font-face {
   font-family: futura-light;
-  src: url(../fonts/futura-pt-light.otf);
+  src: url(./fonts/futura-pt-light.otf);
 }
 @font-face {
   font-family: futura-demi;
-  src: url(../fonts/futura-pt-demibold.otf);
+  src: url(./fonts/futura-pt-demibold.otf);
 }
 
 @keyframes i_am{
@@ -202,6 +202,10 @@
   }
 }
 
+.header #nav-bar{
+  transition: 0.3s;
+}
+
 #everything{
   display:flex;
   flex-direction:column;
@@ -214,7 +218,7 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
+
 }
 
 #App {
@@ -251,7 +255,7 @@ h1{
 
   .header{
     width:100%;
-    background-image: url("../images/Background.jpg");
+    background-image: url("./images/Background.jpg");
     background-size:cover;
     font-family:futura-demi;
     padding: 1em 10% 1em 0em;
@@ -261,9 +265,14 @@ h1{
     line-height:1em;
     z-index: 2;
   }
+    
     .header> span{
       cursor:pointer;
       margin-left:2em;
+    }
+    .header span a{
+      text-decoration:none;
+      color:#222222;
     }
     .header a >div:not(#nav-bar){
       display:block;
@@ -592,7 +601,7 @@ h1{
       width:40%;
       height:30%;
       opacity:0;
-      overflow-y:scroll;
+      /*overflow-y:scroll;*/
     }
     #languages #lang-descrip h5, #languages #lang-descrip h2{
       width:auto;
@@ -1039,9 +1048,7 @@ this is what your website currently works on
     #App {
       font-size:18px;
     }
-    #front-page .main div:last-child div{
-      /*padding-left:10%;*/
-    }
+
     h1{
       font-size:2.5em;
     }
@@ -1230,6 +1237,16 @@ this is what your website currently works on
 
   
 }
+
+
+
+// Imports
+@import "./scss/Projects";
+
+
+// Components
+@import "./scss/Components/Contact";
+@import "./scss/Components/ExperienceGrid";
 
 
 

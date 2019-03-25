@@ -1,126 +1,8 @@
 
 import React from 'react';
-import "./experience.css"
+import "../App.css"
+import {experiences as exp} from '../becks_config';
 
-var experiences=[
-{
-  role:"Summer Intern",
-  startdate: new Date(2015, 6),
-  enddate:new Date(2015, 9),
-  company:"BluWireless",
-  responsibilities:[
-    "Hardware design, worked primarily in System Verilog.",
-    "Developed a Direct Memory Access module and several memory models.",
-    "Creation of makefiles, bash scripts and managing remote repositories.",
-  ],
-  skills:["System Verilog", "Mercurial"]
-},
-{
-  role:"Social Secretary",
-  startdate:new Date(2015,8),
-  enddate:new Date(2016,5),
-  company:"Imperial College London, Womens Rugby",
-  responsibilities:[
-    "Team member recruitment: posters, taster sessions.",
-    "Organisation of socials throughout the year: costumes, venue hiring."
-  ],
-  media:[],
-  skills:[
-    "Organisation and Planning", "Friendliness"
-  ]
-},
-{
-  role:"Future Academy Resident",
-  startdate:new Date(2016,6),
-  enddate:new Date(2016,9),
-  company:"AKQA",
-  media:[],
-  responsibilities:[
-    "Series of Startup-like project sprints",
-    "Immersed ourselves in problems and created, prototyped and tested solutions before pitching to clients.",
-    "Developed prototypes using Adobe Aftereffects, Photoshop",
-    "Pitched several presentations to clients using Keynote."
-  ],
-  skills:["Research","Adobe Illustrator", "Keynote", "Adobe AfterEffects", "Speech Delivery", "Design", "Agile", "Sprint Planning", "Ideation Processes", "User Surveys"]
-},
-{
-  role:"Gender-Variant Officer",
-  startdate:new Date(2016,8),
-  enddate:new Date(2017,5),
-  company:"Imperial College London, Queer Society",
-  responsibilities:[
-    "In charge of the organising and running trans socials",
-    "Providing support and advice for Imperials trans students.",
-  ],
-  skills:["Organisation and Planning"]
-},
-
-{
-  role:"Junior Software Developer",
-  startdate:new Date(2018,8),
-  enddate:new Date(2019,2),
-  media:[],
-  company:"SohoStrategy",
-  responsibilities:[
-    "Developed a Dataset CMS with a React Frontend, Nodejs Backend & PostgreSQL Database. ",
-    "Setup systems on AWS, with automated CodeDeploy via CircleCI",
-    "Created several data scrapers using ScraPy."
-  ],
-  skills:[
-    "NodeJS","CircleCI","AWS RDS,EC2,CodeDeploy","ScrapingHub","SASS", "HTML5", "CSS3", "Javascript ES6", "React", "Python3", "ScraPy","PostGresQL"
-  ]
-},
-
-{
-  role:"Prototype Developer / Innovations Analyst",
-  startdate:new Date(2017,7),
-  enddate:new Date(2018,6),
-  media:[],
-  company:"NBCUniversal",
-  responsibilities:[
-    "Research new emerging technologies: create reports.",
-    "Provide technical expertise and create demos to raise company tech awareness.",
-    "Develop aesthetic prototypes: wireframes and UIs for new ideas and demos",
-    "Develop functional prototypes:MEAN stack web applications, unity games and machine learning applications.",
-  ],
-  skills:[
-    "Research","Adobe Illustrator", "Adobe AfterEffects", "HTML5", "CSS3", "Javascript ES6", "Angular", "React", "Python", "ML & AI"
-  ]
-},
-{
-  role:"Robotics Course Assistant Developer",
-  startdate:new Date(2013, 5),
-  enddate: new Date(2014, 7),
-  media:[],
-  company:"Dame Alice Owens",
-  responsibilities:[
-    "Developed a robotics curriculum for the Year 7-9 Students.",
-    "Assisted in constructing 20 robots controlled by arduinos",
-    "Helped adapt the freeware minibloq graphics and code to extend the functionality: coloured LED Strips, remote controls, obstacle detection and line following. ",
-  ],
-  skills:["C++", "Adobe Photoshop", "Soldering", "Arduino", "Robot Assembly", "Design"]
-},
-{
-  role:"Electronics and Information Student, 2:1",
-  startdate:new Date(2013, 9),
-  enddate:new Date(2017, 9),
-  company:"Imperial College London",
-  responsibilities:[
-    "MEng Final Year Project: Learning the association between pedestrian images and their natural language descriptions.",
-    "Took courses focusing on: Machine Learning, Pattern Recognition, Robotics, Algorithms, High Performance Computing and Graphics",
-  ],
-  skills:["C++", "Soldering", "Verilog","Machine Learning", "AI", "SQL","High Performance Computing", "Advanced Robotics", "F#", "User Interface Design", "Algorithms"]
-}
-/*,
-{
-  role:"Secondary School Student",
-  startdate:new Date(2006, 9),
-  enddate:new Date(2013, 9),
-  company:"Dame Alice Owens",
-  responsibilities:[],
-  skills:["A* Mathematics", "A* Further Mathematics","A* Biology","A* Chemistry","A* Physics",]
-},*/
-]
 /*
 {
   role:"",
@@ -131,9 +13,10 @@ var experiences=[
   skills:[]
 },
 */
-experiences=experiences.sort(function(a, b) {
+var experiences=exp.sort(function(a, b) {
   return -a.startdate.getTime()+ b.startdate.getTime();
 });
+
 const starts=(experiences.map((e)=> e.startdate.getFullYear()*12+e.startdate.getMonth() )) 
 const ends=(experiences.map((e)=> e.enddate.getFullYear()*12+e.enddate.getMonth()) )
 const start=Math.min(...starts)
@@ -141,10 +24,7 @@ const end=Math.max(...ends)
 const duration=end-start
 
 
-
 const gridStyle={
-  //gridTemplateColumns: "repeat("+experiences.length+", 1fr)",
-  //gridTemplateRows: "repeat("+duration+", "+1+"fr)"//+(100/duration)vh
   gridTemplateColumns: "repeat("+duration+", 1fr)",
   gridTemplateRows: "repeat("+experiences.length+", "+1+"fr)"//+(100/duration)vh
 }

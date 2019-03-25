@@ -1,17 +1,22 @@
-@font-face {
-    font-family: futura;
-    src: url(../fonts/futura-pt-medium.otf);
-  }
-  @font-face {
-    font-family: futura-light;
-    src: url(../fonts/futura-pt-light.otf);
-  }
-  @font-face {
-    font-family: futura-demi;
-    src: url(../fonts/futura-pt-demibold.otf);
-  }
 
-#main{
+#toolbar{
+    width:100%;
+    color:white;
+    font-family:futura-demi;
+    background-color:#222222;
+    /*border-radius: 1em 1em 0 0;*/
+    padding:1em 9.5%;
+    flex: 0 0 auto;
+    box-sizing:border-box;
+    /*margin-bottom:1.333vw;*/
+    text-align:justify;
+    text-justify: inter-word;
+    
+}
+
+.projects{
+
+&#main{
     width:100%;
     padding:0% 0%;
     box-sizing:border-box;
@@ -96,9 +101,7 @@
             padding-left:0;
         }  
      
-        #projects-container div:hover{
 
-        }
         #projects-container div #overlay{
             width:100%;
             height:100%;
@@ -166,12 +169,12 @@
                 margin:1em 0;
                 font-size:1em;
             }
-    #fill-page{
+    &#fill-page{
         flex: 1 ;
         overflow-y:scroll;
        
     }
-    #fill-page> div:first-child{
+    &#fill-page> div:first-child{
         width:100%;
         height: 100%;
         
@@ -477,3 +480,4 @@
 
 }
 
+}

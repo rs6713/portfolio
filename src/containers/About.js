@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import Languages from './Languages';
 //import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import Chart from 'chart.js' 
 import $ from "jquery";
 
