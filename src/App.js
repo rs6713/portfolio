@@ -16,16 +16,12 @@ class App extends Component {
       hideAlert:false
     }
     this.hideAlert=this.hideAlert.bind(this)
-    console.log(this.props.location)
   }
   hideAlert(){
     this.setState({hideAlert:true})
   }
 
-  componentDidMount(){
-    this.setState({page:"about"}) 
-  }
-  
+ 
 
   render() {
     return(
@@ -39,7 +35,7 @@ class App extends Component {
             <span>&times;</span>
           </div>
         </div>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
         <Menu />
         
           <Switch>
@@ -47,7 +43,7 @@ class App extends Component {
             <Route path="/projects" component={Projects} />
             <Route path="/experience" component={Experience} />
             <Route path="/contact" component={Contact} />
-            <Route path="/" component={About} />
+            <Route path="*" component={About} />
           </Switch>
         </Router>
       </div>

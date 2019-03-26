@@ -726,7 +726,7 @@ const chartOptions={
         }
     }
 };
-
+/*
 var languages=[
     {
         icon:'html.png',
@@ -787,7 +787,7 @@ var languages=[
   
   for(let p=0; p<languages.length; p++){
         var img=new Image();
-        img.src="../images/languages/"+languages[p].icon
+        img.src="../images/langs/"+languages[p].icon
         languages[p].icon=img;
   }
-
+*/

@@ -40,7 +40,7 @@ class Menu extends React.Component {
     }
 
     render(){
-      var page = this.props.location.pathname.slice(1)
+      var page = this.props.location.pathname.split('/').slice(this.props.location.pathname.split('/').length-1)
       console.log(this.props.location.pathname, this.state.menuTabsPos)
       var navStyle={
         width: this.state.menuTabsPos[page][1],
